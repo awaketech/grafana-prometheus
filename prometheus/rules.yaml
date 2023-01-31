@@ -1,0 +1,21 @@
+groups:
+  - name: ServerDown
+    rules:
+    - alert: 'Server Offline Alert'
+      expr: up  == 0
+      for: 5s
+      annotations:
+        summary: "Server Offline : {{.instance}}"
+        description: "Server Offline  : {{.instance}}"
+        custom: "server"
+
+  - name: AppDown
+    rules:
+    - alert: 'Log App Offline Alert'
+      expr: up{instance="localhost:4000",job="my-app"} == 0
+      for: 5s
+      annotations:
+        summary: "Log app Offline : {{.instance}}"
+        description: "Log app Offline  : {{.instance}}"
+        custom: "app"
+
