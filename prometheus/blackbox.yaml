@@ -22,7 +22,7 @@ modules:
       valid_status_codes: []  # Defaults to 2xx
       method: GET
       headers:
-        Host: http://161.35.253.60:90
+        Host: http://0.0.0.0:90
         Accept-Language: en-US
       no_follow_redirects: false
       fail_if_ssl: false
